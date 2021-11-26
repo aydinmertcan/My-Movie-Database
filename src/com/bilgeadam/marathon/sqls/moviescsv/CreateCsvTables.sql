@@ -1,0 +1,13 @@
+BEGIN;
+CREATE TABLE IF NOT EXISTS public.movies ( "movieId" serial NOT NULL, title character varying, genres character varying, PRIMARY KEY ("movieId"));
+CREATE TABLE IF NOT EXISTS public.links( "movieId" integer NOT NULL, "imdbId" integer, "tmdbId" integer);
+CREATE TABLE IF NOT EXISTS public.ratings( "userId" integer NOT NULL, "movieId" integer,  rating real, "timestamp" integer);
+CREATE TABLE IF NOT EXISTS public.tags( "userId" integer, "movieId" integer,  tag character varying, "timestamp" integer);
+ALTER TABLE IF EXISTS public.links ADD FOREIGN KEY ("movieId") REFERENCES public.movies ("movieId") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION NOT VALID;
+ALTER TABLE IF EXISTS public.ratings ADD FOREIGN KEY ("movieId") REFERENCES public.movies ("movieId") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION NOT VALID;
+ALTER TABLE IF EXISTS public.tags ADD FOREIGN KEY ("movieId") REFERENCES public.movies ("movieId") MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION NOT VALID;
+END;
+COPY movies FROM '/Users/mertcanaydin/eclipse-workspace/MovieDatabase/src/com/bilgeadam/marathon/data/movies.csv' DELIMITER ',' CSV HEADER;
+COPY links FROM '/Users/mertcanaydin/eclipse-workspace/MovieDatabase/src/com/bilgeadam/marathon/data/links.csv' DELIMITER ',' CSV HEADER;
+COPY ratings FROM '/Users/mertcanaydin/eclipse-workspace/MovieDatabase/src/com/bilgeadam/marathon/data/ratings.csv' DELIMITER ',' CSV HEADER;
+COPY tags FROM '/Users/mertcanaydin/eclipse-workspace/MovieDatabase/src/com/bilgeadam/marathon/data/tags.csv' DELIMITER ',' CSV HEADER;
