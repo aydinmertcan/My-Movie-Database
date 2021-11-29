@@ -1,4 +1,4 @@
-package com.bilgeadam.marathon.client;
+package com.bilgeadam.marathon.client.model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ public class Client {
 			if(isExecuted) 
 				System.out.println("Tables are successfully created.");
 			else
-				System.out.println("Error is occured while creating tables.");
+				System.out.println("Error occured while creating tables.");
 		} catch (SQLException e) {
 			e.getMessage();
 		}
