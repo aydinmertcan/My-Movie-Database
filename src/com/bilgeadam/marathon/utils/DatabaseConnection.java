@@ -25,12 +25,12 @@ public class DatabaseConnection {
 	    private DatabaseConnection() {
 	    try {
 	        Class.forName(databaseInformation.getForNameData());
-	        System.out.println("postgresql-42.3.1 jar Driver yüklendi");
+	        System.out.println("postgresql-42.3.1 jar is added.");
 
 	        this.connection= DriverManager.getConnection(url,userName,password);
-	        System.out.println("Connection başarılı");
+	        System.out.println("Successfully connected.");
 	    } catch (Exception e) {
-	        System.out.println("Hatalar meydana geldi");
+	        System.out.println("Error occured while connecting.");
 	        e.printStackTrace();
 	    }
 	    }
@@ -58,9 +58,6 @@ public class DatabaseConnection {
 	    //getter and setter
 	    public Connection getConnection() {
 	        return connection;
-	    }
-	    public static void main(String[] args) {
-	        DatabaseConnection connection = new DatabaseConnection();
 	    }
 
 }

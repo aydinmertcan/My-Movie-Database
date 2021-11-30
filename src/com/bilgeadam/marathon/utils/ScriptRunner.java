@@ -7,7 +7,6 @@ import java.sql.Statement;
 
 public class ScriptRunner {
 	private String path;
-	private Statement stmt;
 	private ResultSet rS;
 	private boolean isExecuted;
 	
@@ -30,7 +29,7 @@ public class ScriptRunner {
 			}
 			this.isExecuted = true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("Error occured at executeCreationStatement");
 			this.isExecuted = false;
 		}
 		return isExecuted;

@@ -1,1 +1,0 @@
-COPY namestsv FROM '/Users/mertcanaydin/Desktop/Marathon/Raw/TSV/names.tsv' DELIMITER '\t'

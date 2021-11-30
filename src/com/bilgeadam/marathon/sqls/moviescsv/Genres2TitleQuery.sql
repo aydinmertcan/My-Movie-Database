@@ -1,1 +1,0 @@
-select distinct m.genres from movies m;
