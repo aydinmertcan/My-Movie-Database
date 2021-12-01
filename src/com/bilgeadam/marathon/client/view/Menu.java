@@ -78,9 +78,4 @@ public class Menu {
 		} while(true);
 		
 	}
-
-	public static void main(String[] args) {
-		Menu menu = new Menu();
-		menu.showMenu();
-	}
 }

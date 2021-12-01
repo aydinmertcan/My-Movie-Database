@@ -90,16 +90,6 @@ public class ActorDao implements Serializable {
 	        }
 	        return actorDto;
 	    }
-	    
-//	    public void showActorDetails() {
-//	    	ActorDto actorDto = new ActorDto();
-//	    	HashMap<Integer ,MovieDto> movies = actorDto.getMoviesOfActor();
-//	    	int i = 0;
-//	    	StringBuilder strBuilder = new StringBuilder();
-//	    	for (MovieDto movieDto : movies) {
-//				movieDto.getPrimaryTitle();
-//			}
-//	    }
 	   
 	    
 	    public static void main(String[] args) {
